@@ -2,7 +2,7 @@
 
 sudo apt update
 sudo apt upgrade
-sudo apt install awesome picom xorg lightdm git nitrogen kitty firefox thunderbird exa neofetch rofi numlockx libreoffice pulseaudio alsa pavucontrol clang cmake xsel python3-pip ripgrep gcc g++ composer gh fd-find
+sudo apt install awesome picom xorg lightdm git nitrogen kitty firefox thunderbird exa neofetch rofi numlockx libreoffice pulseaudio alsa pavucontrol clang xsel python3-pip ripgrep gcc g++ composer gh fd-find
 sudo apt-get install ninja-build gettext cmake unzip curl
 
 gh auth login
@@ -23,5 +23,19 @@ pip install pynvim
 
 xdg-users-dirs-update
 
-mkdir Scripts
 mkdir Dev
+mkdir .config
+
+git clone https://github.com/NicolasSoulay/Scripts.git
+cd Pictures
+git clone https://github.com/NicolasSoulay/Wallpapers.git
+cd ~/.config
+git clone https://github.com/NicolasSoulay/neovim.git
+git clone https://github.com/NicolasSoulay/kitty.git
+git clone https://github.com/NicolasSoulay/awesome.git
+
+rm -r ~/.local/share/fonts
+cd ~/.local/share
+git clone https://github.com/NicolasSoulay/fonts.git
+cd ~
+fc-cache -f -v
