@@ -2,7 +2,7 @@
 
 sudo apt update
 sudo apt upgrade
-sudo apt install awesome picom xorg lightdm git nitrogen kitty firefox thunderbird exa neofetch rofi numlockx libreoffice pulseaudio alsa pavucontrol clang xsel python3-pip ripgrep gcc g++ composer gh fd-find
+sudo apt install picom lightdm git nitrogen thunderbird exa neofetch rofi numlockx libreoffice pulseaudio alsa pavucontrol clang xsel python3-pip ripgrep gcc g++ composer gh fd-find
 sudo apt-get install ninja-build gettext cmake unzip curl
 
 gh auth login
