@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+cd ~
+
 sudo apt update
 sudo apt upgrade
 sudo apt install picom lightdm git nitrogen thunderbird exa neofetch rofi numlockx libreoffice pulseaudio alsa pavucontrol clang xsel python3-pip ripgrep gcc g++ composer gh fd-find
@@ -17,24 +19,34 @@ git checkout release-0.9
 make CMAKE_BUILD_TYPE=Release
 sudo make install
 cd ..
-rm -r neovim
+rm -R neovim
 
 pip install pynvim
+
+mkdir .config
+touch .config/user-dirs.dirs
+echo 'XDG_DESKTOP_DIR="$HOME/Desktop"' >> .config/user-dirs.dirs
+echo 'XDG_DOWNLOAD_DIR="$HOME/Downloads"' >> .config/user-dirs.dirs
+echo 'XDG_TEMPLATES_DIR="$HOME/Templates"' >> .config/user-dirs.dirs
+echo 'XDG_PUBLICSHARE_DIR="$HOME/Public"' >> .config/user-dirs.dirs
+echo 'XDG_DOCUMENT_DIR="$HOME/Documents"' >> .config/user-dirs.dirs
+echo 'XDG_MUSIC_DIR="$HOME/Music"' >> .config/user-dirs.dirs
+echo 'XDG_PICTURES_DIR="$HOME/Pictures"' >> .config/user-dirs.dirs
+echo 'XDG_VIDEOS_DIR="$HOME/Videos"' >> .config/user-dirs.dirs
 
 xdg-users-dirs-update
 
 mkdir Dev
-mkdir .config
 
 git clone https://github.com/NicolasSoulay/Scripts.git
 cd Pictures
 git clone https://github.com/NicolasSoulay/Wallpapers.git
 cd ~/.config
-git clone https://github.com/NicolasSoulay/neovim.git
+git clone https://github.com/NicolasSoulay/nvim.git
 git clone https://github.com/NicolasSoulay/kitty.git
 git clone https://github.com/NicolasSoulay/awesome.git
 
-rm -r ~/.local/share/fonts
+sudo rm -R ~/.local/share/fonts
 cd ~/.local/share
 git clone https://github.com/NicolasSoulay/fonts.git
 cd ~
