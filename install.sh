@@ -4,7 +4,7 @@ cd ~
 
 sudo apt update
 sudo apt upgrade
-sudo apt install picom lightdm git nitrogen thunderbird exa neofetch rofi numlockx libreoffice pulseaudio alsa pavucontrol clang xsel python3-pip ripgrep gcc g++ composer gh fd-find
+sudo apt install picom lightdm git nitrogen thunderbird exa neofetch rofi numlockx libreoffice pulseaudio pavucontrol clang xsel python3 python3-pip ripgrep gcc g++ composer gh fd-find
 sudo apt-get install ninja-build gettext cmake unzip curl
 
 gh auth login
@@ -21,7 +21,9 @@ sudo make install
 cd ..
 rm -R neovim
 
-pip install pynvim
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r pynvim
 
 mkdir .config
 touch .config/user-dirs.dirs
